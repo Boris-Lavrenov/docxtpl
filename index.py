@@ -87,12 +87,10 @@ pdfmetrics.registerFont(TTFont('ArialBold','ArialBold.ttf'))
 x,y = A4
 
 
-for i in range(0,5):
-    drawUserLEFT(c,y,i)
-    drawUserRIGHT(c,y,i)
-
-
-
-
-c.showPage()
+for i in range(0,13):
+    if i % 5 == 0 and i!=0:
+        c.showPage()
+    drawUserLEFT(c,y,i%5)
+    drawUserRIGHT(c,y,i%5)
+ 
 c.save()
